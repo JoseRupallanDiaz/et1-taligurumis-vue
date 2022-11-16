@@ -11,7 +11,7 @@
           </li>
           <li class="nav-item"><a class="nav-link">Mis Pedidos</a></li>
           <li class="nav-item"><a class="nav-link">Lista Pedidos</a></li>
-          <li class="nav-item"><a class="nav-link">Nuevo Pedido</a></li>
+          <li class="nav-item"><router-link to="/nuevo-pedido" class="nav-link">Nuevo Pedido</router-link></li>
           <li class="nav-item"><a class="nav-link">Iniciar Sesión</a></li>
           <li class="nav-item"><a class="nav-link">Cerrar Sesión</a></li>
         </ul>

@@ -1,7 +1,9 @@
 <template>
-  <navbarComponent/>
-  <router-view/>
-  <footerComponent/>
+  <navbarComponent />
+  <div class="router">
+    <router-view />
+  </div>
+  <footerComponent />
 </template>
 
 <script>
@@ -9,11 +11,15 @@ import navbarComponent from '@/components/navbarComponent.vue'
 import footerComponent from '@/components/FooterComponent.vue'
 
 export default {
-  components: {navbarComponent, footerComponent}
+  components: { navbarComponent, footerComponent }
 }
 </script>
 
 <style>
+.router {
+  min-height: 78.6vh;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
