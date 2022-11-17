@@ -1,13 +1,39 @@
 <template>
-    <div class="w-100 overflow-hidden shadow">
-        <div class="carrusel bg-primary w-100">Imagen</div>
+    <div id="carouselExampleInterval" class="carousel slide carrusel shadow" data-bs-ride="carousel">
+        <div class="carousel-inner h-100">
+            <div class="carousel-item active h-100" data-bs-interval="2000">
+                <img class="w-100" :src="carrusel[0].img">
+                <div class="carousel-caption">
+                    <h4>{{carrusel[0].title}}</h4>
+                    <h5>{{carrusel[0].desc}}</h5>
+                </div>
+            </div>
+            <div class="carousel-item h-100" data-bs-interval="2000">
+                <img class="d-block w-100" :src="carrusel[1].img">
+                <div class="carousel-caption">
+                    <h4>{{carrusel[1].title}}</h4>
+                    <h5>{{carrusel[1].desc}}</h5>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
     <div class="d-flex flex-wrap m-5 px-5 gap-5 justify-content-center">
-        <div class="d-flex bg-primary rounded-4 overflow-hidden shadow" v-for="pedido in pedidos" :key="pedido.id">
-            <div class="card-img bg-warning d-flex">
-                <img class="w-100" :src="pedido.img">
+        <div class="d-flex rounded-4 overflow-hidden shadow product bg-secondary text-dark" v-for="pedido in pedidos"
+            :key="pedido.id">
+            <div class="d-flex">
+                <img class="h-100 rounded-4 rounded-4-end" :src="pedido.img">
             </div>
-            <div class="d-flex flex-column card-body p-2">
+            <div class="d-flex flex-column p-3 flex-grow-1">
                 <h3>{{ pedido.title }}</h3>
                 <span>{{ pedido.date }}</span>
                 <span>{{ pedido.desc }}</span>
@@ -16,7 +42,7 @@
         </div>
     </div>
     <div class="my-5">
-        <a class="btn btn-primary shadow">Crear nuevo pedido</a>
+        <a class="btn btn-primary shadow text-dark" :href="'/nuevo-pedido'">Crear nuevo pedido</a>
     </div>
 </template>
 
@@ -24,6 +50,21 @@
 export default {
     data() {
         return {
+            imgSelected: "0",
+            carrusel: [
+                {
+                    id: 1,
+                    img: "https://wallpaperaccess.com/full/658657.jpg",
+                    title: "Bienvenidos!",
+                    desc: "leyenda 1"
+                },
+                {
+                    id: 2,
+                    img: "https://img.freepik.com/free-photo/cozy-background-wallpaper-with-yarn-knitting_169016-6305.jpg",
+                    title: "PLACEHOLDER!",
+                    desc: "leyenda 2"
+                }
+            ],
             pedidos: [
                 {
                     id: 1,
@@ -69,16 +110,20 @@ export default {
 
 <style>
 .carrusel {
-    height: 30rem;
+    height: 25em;
 }
 
-.card-body {
-    height: 200px;
-    width: 400px;
+h4, h5{
+    text-shadow: 0px 3px 2px black;
 }
 
-.card-img {
+.product {
+    width: 500px;
     height: 200px;
+}
+
+.product img {
     width: 200px;
+    min-width: 200px;
 }
 </style>

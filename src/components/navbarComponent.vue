@@ -1,21 +1,15 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="" alt="Logo" width="30" height="24">
+  <nav class="bg-primary text-dark">
+    <div class="d-flex gap-3 align-items-center p-2">
+      <a class="navbar-brand">
+        <img src="@/assets/logo.png" alt="Logo" height="50">
       </a>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav">
-          <li>
-            <router-link to="/" class="nav-link">Inicio</router-link>
-          </li>
-          <li class="nav-item"><a class="nav-link">Mis Pedidos</a></li>
-          <li class="nav-item"><a class="nav-link">Lista Pedidos</a></li>
-          <li class="nav-item"><router-link to="/nuevo-pedido" class="nav-link">Nuevo Pedido</router-link></li>
-          <li class="nav-item"><a class="nav-link">Iniciar Sesión</a></li>
-          <li class="nav-item"><a class="nav-link">Cerrar Sesión</a></li>
-        </ul>
-      </div>
+      <router-link to="/" class="nav-link">Inicio</router-link>
+      <a class="nav-link">Mis Pedidos</a>
+      <a class="nav-link">Lista Pedidos</a>
+      <router-link to="/nuevo-pedido" class="nav-link">Nuevo Pedido</router-link>
+      <a class="nav-link">Iniciar Sesión</a>
+      <a class="nav-link">Cerrar Sesión</a>
     </div>
   </nav>
 </template>
@@ -27,5 +21,4 @@ export default {
 </script>
 
 <style>
-
 </style>
