@@ -5,8 +5,8 @@
         <img src="@/assets/logo.png" alt="Logo" height="50">
       </a>
       <router-link to="/" class="nav-link">Inicio</router-link>
-      <a class="nav-link">Mis Pedidos</a>
-      <a class="nav-link">Lista Pedidos</a>
+      <router-link to="/pedidos" class="nav-link">Mis Pedidos</router-link>
+      <router-link to="/pedidos/admin" class="nav-link">Lista Pedidos</router-link>
       <router-link to="/nuevo-pedido" class="nav-link">Nuevo Pedido</router-link>
       <a class="nav-link">Iniciar Sesión</a>
       <a class="nav-link">Cerrar Sesión</a>

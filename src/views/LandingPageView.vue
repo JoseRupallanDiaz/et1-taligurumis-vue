@@ -1,48 +1,50 @@
 <template>
-    <div id="carouselExampleInterval" class="carousel slide carrusel shadow" data-bs-ride="carousel">
-        <div class="carousel-inner h-100">
-            <div class="carousel-item active h-100" data-bs-interval="2000">
-                <img class="w-100" :src="carrusel[0].img">
-                <div class="carousel-caption">
-                    <h4>{{carrusel[0].title}}</h4>
-                    <h5>{{carrusel[0].desc}}</h5>
+    <div class="d-flex flex-column align-items-center">
+        <div id="carouselExampleInterval" class="carousel slide carrusel shadow" data-bs-ride="carousel">
+            <div class="carousel-inner h-100">
+                <div class="carousel-item active h-100" data-bs-interval="2000">
+                    <img class="w-100" :src="carrusel[0].img">
+                    <div class="carousel-caption">
+                        <h4 class="text-shadow">{{ carrusel[0].title }}</h4>
+                        <h5 class="text-shadow">{{ carrusel[0].desc }}</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="2000">
+                    <img class="d-block" :src="carrusel[1].img">
+                    <div class="carousel-caption">
+                        <h4 class="text-shadow">{{ carrusel[1].title }}</h4>
+                        <h5 class="text-shadow">{{ carrusel[1].desc }}</h5>
+                    </div>
                 </div>
             </div>
-            <div class="carousel-item h-100" data-bs-interval="2000">
-                <img class="d-block w-100" :src="carrusel[1].img">
-                <div class="carousel-caption">
-                    <h4>{{carrusel[1].title}}</h4>
-                    <h5>{{carrusel[1].desc}}</h5>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <div class="d-flex flex-wrap m-5 px-5 gap-5 justify-content-center">
+            <div class="d-flex rounded-4 overflow-hidden shadow product bg-secondary text-dark"
+                v-for="pedido in pedidos" :key="pedido.id">
+                <div class="d-flex">
+                    <img class="h-100 rounded-4 rounded-4-end" :src="pedido.img">
+                </div>
+                <div class="d-flex flex-column p-3 flex-grow-1">
+                    <h3>{{ pedido.title }}</h3>
+                    <span>{{ pedido.date }}</span>
+                    <span>{{ pedido.desc }}</span>
+                    <span>{{ pedido.user.review }}</span>
                 </div>
             </div>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-    <div class="d-flex flex-wrap m-5 px-5 gap-5 justify-content-center">
-        <div class="d-flex rounded-4 overflow-hidden shadow product bg-secondary text-dark" v-for="pedido in pedidos"
-            :key="pedido.id">
-            <div class="d-flex">
-                <img class="h-100 rounded-4 rounded-4-end" :src="pedido.img">
-            </div>
-            <div class="d-flex flex-column p-3 flex-grow-1">
-                <h3>{{ pedido.title }}</h3>
-                <span>{{ pedido.date }}</span>
-                <span>{{ pedido.desc }}</span>
-                <span>{{ pedido.user.review }}</span>
-            </div>
+        <div class="mb-5">
+            <a class="btn btn-primary shadow text-dark" :href="'/nuevo-pedido'">Crear nuevo pedido</a>
         </div>
-    </div>
-    <div class="my-5">
-        <a class="btn btn-primary shadow text-dark" :href="'/nuevo-pedido'">Crear nuevo pedido</a>
     </div>
 </template>
 
@@ -113,10 +115,6 @@ export default {
     height: 25em;
 }
 
-h4, h5{
-    text-shadow: 0px 3px 2px black;
-}
-
 .product {
     width: 500px;
     height: 200px;
@@ -125,5 +123,9 @@ h4, h5{
 .product img {
     width: 200px;
     min-width: 200px;
+}
+
+.text-shadow {
+    text-shadow: 0px 1px 3px black;
 }
 </style>
