@@ -1,28 +1,18 @@
 <template>
     <div class="border rounded-3 shadow-sm m-5 p-3 d-flex flex-grow-1 flex-column gap-3 align-items-start">
         <h3>Mis pedidos</h3>
-        <div class="bg-secondary rounded-3 shadow-sm w-100 d-flex flex-column py-3" v-for="order in orders" :key="order._id">
-            <div class="d-flex gap-2 mx-3">
-                <small>{{order.date}}</small>
-                <small class="px-1 rounded shadow-sm" :class="tagStyle(order.state)">{{order.state}}</small>
-            </div>
-            <small class="mx-3">Numero de orden #{{order._id}}</small>
-            <hr>
-            <div class="d-flex mx-3 gap-2">
-                <img :src="order.img" class="rounded border order-picture">
-                <div class="d-flex flex-column">
-                    <h5 class="fw-bold">{{order.name}}</h5>
-                    <h6>Descripción</h6>
-                    <p class="ms-3">{{order.description}}</p>
-                </div>
-            </div>
+        <div class="bg-secondary rounded-3 shadow-sm w-100 d-flex flex-column py-3" v-for="order in orders"
+            :key="order._id">
+            <orderComponent :order="order"></orderComponent>
         </div>
     </div>
 </template>
 
 <script>
+import orderComponent from '@/components/OrderComponent.vue'
+
 export default {
-    data(){
+    data() {
         return {
             orders: [
                 {
@@ -60,26 +50,13 @@ export default {
             ]
         }
     },
-    methods:{
-        tagStyle(value){
-            switch(value){
-                case "Completado":
-                    return ['bg-success text-success-text'];
-                case "En revisión":
-                    return ['bg-info text-info-text'];
-                case "En preparación":
-                    return ['bg-warning text-warning-text'];
-                case "Rechazado":
-                    return ['bg-danger text-danger-text'];
-            }
-        }
-    }
+    components:{orderComponent}
 }
 </script>
 
 <style>
-    .order-picture{
-        width: 74px;
-        height: 74px;
-    }
+.order-picture {
+    width: 74px;
+    height: 74px;
+}
 </style>
