@@ -13,6 +13,13 @@
             <p class="ms-3">{{ order.description }}</p>
         </div>
     </div>
+    <div v-if="order.review.state" class="d-flex flex-column mx-3">
+        <h5 class="fw-bold">Reseña</h5>
+        <div>
+            <span class="ms-3">{{ order.review.msg }}</span>
+            <p class="ms-3 fst-italic">{{ order.review.points }}/10</p>
+        </div>
+    </div>
 </template>
 
 <script>

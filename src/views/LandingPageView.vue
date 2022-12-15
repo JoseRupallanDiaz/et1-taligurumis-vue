@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-column align-items-center">
+    <div class="d-flex flex-column align-items-center bg-secondary">
         <div id="carouselExampleInterval" class="carousel slide carrusel shadow" data-bs-ride="carousel">
             <div class="carousel-inner h-100">
                 <div class="carousel-item active h-100" data-bs-interval="2000">
@@ -29,7 +29,7 @@
             </button>
         </div>
         <div class="d-flex flex-wrap m-5 px-5 gap-5 justify-content-center">
-            <div class="d-flex rounded-4 overflow-hidden shadow product bg-secondary text-dark"
+            <div class="d-flex rounded-4 overflow-hidden shadow product bg-light border text-dark"
                 v-for="pedido in pedidos" :key="pedido.id">
                 <div class="d-flex">
                     <img class="h-100 rounded-4 rounded-4-end" :src="pedido.img">
