@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed d-flex flex-column justify-content-between">
+  <div class="fixed d-flex flex-column">
     <navbarComponent />
     <router-view />
     <div class="self-align-end">

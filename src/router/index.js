@@ -3,6 +3,8 @@ import LandingPageView from '@/views/LandingPageView.vue'
 import NewOrderView from '@/views/NewOrderView.vue'
 import OrderListUserView from '@/views/OrderListUserView.vue'
 import OrderListAdminView from '@/views/OrderListAdminView.vue'
+import LoginView from '@/views/LoginView.vue'
+import RegisterView from '@/views/RegisterView.vue'
 
 const routes = [
   {
@@ -24,6 +26,16 @@ const routes = [
     path: '/pedidos/admin',
     name: 'adminOrders',
     component: OrderListAdminView
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/registrar',
+    name: 'registrar',
+    component: RegisterView
   }
 ]
 

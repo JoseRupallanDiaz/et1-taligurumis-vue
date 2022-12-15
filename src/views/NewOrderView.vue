@@ -1,6 +1,6 @@
 <template>
-    <div class="d-flex w-100 justify-content-center my-5 background">
-        <div class="p-3 border rounded-3 shadow-sm box-size">
+    <div class="d-flex w-100 justify-content-center p-5 flex-grow-1">
+        <div class="p-3 border rounded-3 shadow-sm box-size bg-light">
             <h2>Nuevo Pedido</h2>
             <form class="d-flex flex-column gap-3 text-start">
                 <div class="w-100">

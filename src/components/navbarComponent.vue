@@ -8,17 +8,24 @@
       <router-link to="/pedidos" class="nav-link">Mis Pedidos</router-link>
       <router-link to="/pedidos/admin" class="nav-link">Lista Pedidos</router-link>
       <router-link to="/nuevo-pedido" class="nav-link">Nuevo Pedido</router-link>
-      <a class="nav-link">Iniciar Sesión</a>
-      <a class="nav-link">Cerrar Sesión</a>
+      <router-link to="/login" class="nav-link">Iniciar Sesión</router-link>
+      <a class="nav-link btn" v-on:click="endSession()">Cerrar Sesión</a>
     </div>
   </nav>
 </template>
 
 <script>
 export default {
-  name: 'navbarComponent'
+  name: 'navbarComponent',
+  methods: {
+    endSession(){
+      alert("Cerrando sesión");
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 
 <style>
+
 </style>

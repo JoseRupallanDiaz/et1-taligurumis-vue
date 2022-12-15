@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import OrderComponentVue from '@/components/OrderComponent.vue';
+import OrderComponentVue from '@/components/orderComponent.vue';
 
 export default {
     data() {

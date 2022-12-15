@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import orderComponent from '@/components/OrderComponent.vue'
+import orderComponent from '@/components/orderComponent.vue'
 import reviewComponent from '@/components/reviewComponent.vue'
 
 export default {
